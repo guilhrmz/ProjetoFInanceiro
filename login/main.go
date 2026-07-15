@@ -207,12 +207,12 @@ func main() {
 	mainTmpl := template.Must(template.ParseFiles("main/index.html"))
 
 	// Arquivos estáticos
-	r.StaticFile("/style.css", "./style.css")
+	r.StaticFile("/style.css", "./login/style.css")
 	r.StaticFile("/main/style.css", "./main/style.css")
 
 	// ── Página de login (raiz) ──
 	r.GET("/", func(c *gin.Context) {
-		c.File("index.html")
+		c.File("login/index.html")
 	})
 
 	// ── Rota POST do login ──
